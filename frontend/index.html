@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic page information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linkless</title>
+
+    <!-- These files belong to this project; no external website is used. -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>Linkless</h1>
+        <p>Share files using a simple code.</p>
+
+        <!-- The three main actions -->
+        <button id="sendBtn" type="button">Send Data</button>
+        <button id="receiveBtn" type="button">Receive Data</button>
+        <button id="generateBtn" type="button">Generate Code</button>
+
+        <!-- The server-generated sharing code appears here -->
+        <p id="shareCode" aria-live="polite"></p>
+        <p id="statusMessage" aria-live="polite"></p>
+
+        <!-- Send section -->
+        <section id="sendPage" hidden>
+            <h2>Send Data</h2>
+
+            <label for="fileInput">Choose a file:</label>
+            <input type="file" id="fileInput">
+            <p id="fileName" aria-live="polite"></p>
+
+            <button id="uploadBtn" type="button">Send File</button>
+            <button id="backFromSend" type="button">Back</button>
+        </section>
+
+        <!-- Receive section -->
+        <section id="receivePage" hidden>
+            <h2>Receive Data</h2>
+
+            <label for="receiveCode">Enter sharing code:</label>
+            <input
+                type="text"
+                id="receiveCode"
+                placeholder="Enter code"
+                autocomplete="off"
+            >
+
+            <button id="receiveDataBtn" type="button">Receive File</button>
+            <p id="receiveMessage" aria-live="polite"></p>
+            <button id="backFromReceive" type="button">Back</button>
+        </section>
+    </main>
+</body>
+</html>
